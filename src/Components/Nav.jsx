@@ -68,7 +68,7 @@ const Nav = () => {
                 <i className="fa fa-search text-c-primary"></i>
             </button>
             <div className={`bg-c-back ${location.pathname == '/' ? scrollPosition <= 300 ? 'bg-opacity-45' : 'bg-opacity-100 shadow-c-primary shadow-md' : 'bg-opacity-100 shadow-c-primary shadow-md'}  w-full -bottom-[80px] absolute flex transition-all duration-300 ease-in-out justify-center transform items-center left-0 h-20 origin-top ${isInputVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
-                <input type="text" onChange={editTerm} className={`absolute w-[80%] ${!isInputVisible && 'hiden'} search-bar`} placeholder="Search..." />
+                <input type="text" minLength={3} onChange={editTerm} className={`absolute w-[80%] ${!isInputVisible && 'hiden'} search-bar`} placeholder="Search..." />
                 <i onClick={() => setInputVisible(false)} className="fa fa-arrow-up text-c-primary right-4 absolute"></i>
             </div>
         </form>
