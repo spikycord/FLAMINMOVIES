@@ -19,9 +19,9 @@ const useGetTops = (type) => {
           limit: '20'
         },
         headers: {
-          'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
+        //   'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
           // eslint-disable-next-line no-undef
-        //   'X-RapidAPI-Key': process.env.VITE_RAPID_API_KEY,
+          'X-RapidAPI-Key': process.env.VITE_RAPID_API_KEY,
           'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
         }
       };
