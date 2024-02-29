@@ -17,9 +17,9 @@ const useGetTops = (imdb_id) => {
           i: imdb_id
         },
         headers: {
-        //   'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
+          'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
           // eslint-disable-next-line no-undef
-          'X-RapidAPI-Key': process.env.VITE_RAPID_API_KEY,
+        //   'X-RapidAPI-Key': process.env.VITE_RAPID_API_KEY,
           'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com'
         }
       };
