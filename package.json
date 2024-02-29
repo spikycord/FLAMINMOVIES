@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "serve": "vite preview",
     "ssr": "node server.js",
-    "predeploy": "npm run build:gh",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
