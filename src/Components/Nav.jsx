@@ -28,6 +28,7 @@ const Nav = () => {
     e.preventDefault()
     
     if (isInputVisible) {
+        if (searchTerm.length < 3) return alert('Search term must be at least 3 characters long');
         handleSearch(e)
         setInputVisible(false)
     } else {
@@ -42,6 +43,15 @@ const Nav = () => {
 
     const handleSearch = (e) => {
         e.preventDefault()
+
+        // Check if searchTerm contains bad words
+        const badWords = ['fuck', 'sex', 'porn'];
+
+        if (badWords.some(word => searchTerm.toLowerCase().includes(word))) {
+            return alert('Search term contains inappropriate words');
+        }
+
+
         if (searchTerm.length == 0) return;
         navigate(`search/${searchTerm}`)
     }

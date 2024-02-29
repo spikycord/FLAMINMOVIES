@@ -24,6 +24,26 @@ const Watch = () => {
         document.title = pageTitle ? pageTitle : 'YassFlix';
     }, [pageTitle])
 
+    // Check if title contains inappropiate words
+    const isInappropriate = (title) => {
+        const inappropriateWords = ['sex', 'fuck', 'porn'];
+        const regex = new RegExp(inappropriateWords.join('|'), 'i');
+        return regex.test(title);
+    };
+
+    const isTitleInappropriate = isInappropriate(data?.Title);
+    const isPlotInappropriate = isInappropriate(data?.Plot);
+
+    if(isTitleInappropriate || isPlotInappropriate) {
+        return (
+            <section className='pt-[150px] min-h-screen relative bg-c-back my-container'>
+                <div className='flex justify-center items-center w-full mt-20'>
+                    <h1 className='font-texts text-white text-lg text-center'>This {data?.Type == "movie" ? "movie" : "show"} contains inappropriate content.</h1>
+                </div>
+            </section>
+        )
+    }
+
 
   return (
     <section className='pt-[150px] min-h-screen relative bg-c-back my-container'>

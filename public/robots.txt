@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+Allow: /watch/*
+Allow: /search/*
+
+Sitemap: https://yassflix.yasserbm.tech/sitemap.xml

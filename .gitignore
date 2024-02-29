@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 
+generate-sitemap.js
 .env
 TV_APP.txt
 

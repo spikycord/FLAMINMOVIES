@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import Loader from "../Components/Loader";
@@ -17,6 +18,19 @@ const Search = () => {
     const [page, setPage] = useState(1);
 
     const pageTitle = data && `YassFlix - Search for ${query}`;
+
+    // check if query contains bad words
+    const bad = ["fuck", "sex", "porn"];
+    const containsBadWords = bad.some(word => query.toLowerCase().includes(word));
+    if (containsBadWords) {
+        return (
+            <section className="pt-[150px] pb-10 text-white my-container min-h-screen bg-c-back">
+                <div className='flex justify-center flex-col items-center w-full mt-20'>
+                    <h1 className='font-texts text-white text-4xl text-center'>inappropriate words detected!</h1>
+                </div>
+            </section>
+        )
+    }
 
     useEffect(() => {
         document.title = pageTitle ? pageTitle : "YassFlix - Search";
@@ -118,7 +132,7 @@ const Search = () => {
                                 return (
                                     <TitleCard key={movie.imdbID}
                                         title={movie.Title}
-                                        img={movie.Poster}
+                                        img={movie.Poster == "N/A" ? "https://placehold.co/180x250/EEE/31343C?font=raleway&text=No+Image+Provided" : movie.Poster}
                                         year={movie.Year}
                                         titleId={movie.imdbID}
                                     />

@@ -19,7 +19,7 @@ const TitleCard = ({title, img, rating, year, titleId}) => {
   return ( 
       <div className="flex flex-col mx-2 w-full overflow-hidden items-center relative max-w-[180px] max-h-fit max-sm:max-w-[130px]">
             <Link to={{pathname: `/watch/${titleId}`}}>
-                <div className="w-fit h-fit overflow-hidden">
+                <div className="w-fit h-fit overflow-hidden rounded-md">
                 <img onLoad={handleLoad} src={img ? img : 'https://placehold.co/180x250/EEE/31343C?font=raleway&text=Image+Not\nFound'}
                 className={`w-full h-auto rounded-md hover:scale-125 hover:-rotate-6  transition duration-200 `}
                 alt={title} 

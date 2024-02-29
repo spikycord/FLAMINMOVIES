@@ -7,19 +7,24 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import pkg from 'react-router-dom';
+import { createRequire } from 'module';
 
 const { StaticRouter } = pkg;
 
+const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 async function createServer() {
   const app = express();
 
-  const vite = await createViteServer({
+
+    app.use(require('prerender-node').set('prerenderToken', 'tUN3u8LLtaDf8LAIWjRP'));
+
+const vite = await createViteServer({
     server: { middlewareMode: 'ssr' },
-  });
-  app.use(vite.middlewares);
+});
+app.use(vite.middlewares);
 
   app.use('*', async (req, res) => {
     const url = req.originalUrl;
