@@ -64,7 +64,7 @@ const Tops = ({query, title}) => {
 
 
   return (
-    <section className={`bg-c-back my-container w-full ${title == 'Top Movies' ? 'pt-20 pb-2' : 'pt-3 pb-20' }`}>
+    <section className={`bg-c-back my-container w-full ${title == 'Top Movies' ? 'pt-12 pb-2' : 'pt-3 pb-20' }`}>
         <div className="max-w-full w-full">
             <h3 className="text-white font-titles my-8 text-4xl">{title}</h3>
             {

@@ -26,3 +26,6 @@ TV_APP.txt
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify/

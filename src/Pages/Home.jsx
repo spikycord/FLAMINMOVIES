@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import MainScreen from "../Components/MainScreen"
 import Tops from "../Components/Tops"
 import { useEffect } from "react";
+import Info from "../Components/Info";
 
 const Home = () => {
 
@@ -22,6 +23,7 @@ const Home = () => {
   return (
       <div>
         <MainScreen />
+        <Info />
         <Tops 
             query="top_boxoffice_200"
             title="Top Movies"

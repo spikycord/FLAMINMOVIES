@@ -60,7 +60,7 @@ const Nav = () => {
     <nav className={`my-container z-30 ${location.pathname == "/" ? "fixed" : "absolute"} w-full transition duration-200 bg-c-back ${location.pathname == '/' ? scrollPosition <= 300 ? 'bg-opacity-45 shadow-c-back' : 'bg-opacity-100 shadow-c-primary' : 'bg-opacity-100 shadow-c-primary'} shadow-md flex justify-between items-center`}>
         <div className="logo mr-4">
             <Link to='/'>
-            <img src={largeIcon} alt="YassFlix"
+            <img src={largeIcon} alt="YassFlix Logo"
                 className="object-contain sm:w-[180px] max-sm:w-[150px]"
              />
             </Link>

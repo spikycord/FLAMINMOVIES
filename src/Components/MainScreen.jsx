@@ -48,16 +48,14 @@ const MainScreen = () => {
 
 
         {/* Background */}
-        <div className={`w-full absolute h-screen -z-20 top-0 left-0 hh bg-c-back`}>
-                <img src={chosen.backdrop_path}  alt=""
+        <div className={`w-full absolute h-screen max-sm:h-[93vh] -z-20 top-0 left-0 hh bg-c-back`}>
+                <img src={chosen.backdrop_path}  alt={`${chosen.title} Background`}
                     className={`w-screen h-screen object-cover max-sm:hidden absolute -z-20`}
                 />
-                <img src={chosen.poster_path}  alt=""
+                <img src={chosen.poster_path}  alt={`${chosen.title} Background`}
                     className={`w-full h-full object-cover object-center sm:hidden absolute -z-20`}
                 />
         </div>
-
-
     </div>
   )
 }

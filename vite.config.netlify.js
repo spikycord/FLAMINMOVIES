@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: '/src/main.jsx',
-        function: '/netlify/functions/render.js',
+        main: 'src/main.jsx',
+        function: 'netlify/functions/render.jsx',
       },
     },
   },
