@@ -16,7 +16,7 @@ const useGetTops = (type) => {
           list: type,
           sort: 'year.decr',
           info: 'base_info',
-          limit: '12'
+          limit: '30'
         },
         headers: {
           'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,

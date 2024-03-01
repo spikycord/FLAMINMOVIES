@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Loader from "./Loader";
+import { useEffect, useState } from "react";
 
 
 
@@ -12,6 +13,7 @@ import Loader from "./Loader";
 
 // eslint-disable-next-line react/prop-types
 const Tops = ({query, title}) => {
+
 
     const settings = {
         infinite: true,
@@ -63,6 +65,8 @@ const Tops = ({query, title}) => {
       const {data, isLoading, error} = useGetTops(query)
 
 
+
+
   return (
     <section className={`bg-c-back my-container w-full ${title == 'Top Movies' ? 'pt-12 pb-2' : 'pt-3 pb-20' }`}>
         <div className="max-w-full w-full">
@@ -87,6 +91,7 @@ const Tops = ({query, title}) => {
                                 img={movie.primaryImage.url}
                                 year={movie.releaseYear.year}
                                 titleId={movie.id}
+                                compress={true}
                                 />
                         ))
                     }
