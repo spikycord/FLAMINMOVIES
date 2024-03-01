@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import Loader from "./Loader"
 
 
 
@@ -8,7 +7,6 @@ import Loader from "./Loader"
 const TitleCard = ({title, img, rating, year, titleId, compress}) => {
 
     const [imageUrl, setImageUrl] = useState(null)
-    const [imge, setImg] = useState("")
 
 
 
@@ -18,7 +16,6 @@ const TitleCard = ({title, img, rating, year, titleId, compress}) => {
                 // eslint-disable-next-line react/prop-types
                 const imgArr = img.split("/")
                 const imgName = imgArr[imgArr.length - 1]
-                imgName && setImg(imgName)
                 if (imgName) {
                     setImageUrl(`https://yassflix.imgix.net/${imgName}?w=300`)
                 }else if (!imgName && img) {
@@ -26,6 +23,8 @@ const TitleCard = ({title, img, rating, year, titleId, compress}) => {
                 }else {
                     setImageUrl('https://placehold.co/180x250/EEE/31343C?font=raleway&text=Image+Not+Found')
                 }
+            }else {
+                setImageUrl(img)
             }
       }, [])
 
